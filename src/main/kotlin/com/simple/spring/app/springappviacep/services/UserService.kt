@@ -14,7 +14,7 @@ class UserService @Autowired constructor(val repo: UserRepository) {
 
     fun find(id: Int): User {
         val obj: User? = repo.findByIdOrNull(id)
-        return obj ?: throw ObjectNotFoundException("Objeto não encontrado! Id: {$id}", "Tipo {${User::class}}")
+        return obj ?: throw ObjectNotFoundException("Objeto não encontrado! Id: $id", "Tipo ${User::class}")
     }
 
     fun insert(obj: User): User {
